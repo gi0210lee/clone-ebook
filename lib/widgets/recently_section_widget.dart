@@ -19,10 +19,13 @@ class RecentlySection extends StatelessWidget {
       itemCount: homeProvider.recent.feed!.entry!.length,
       itemBuilder: (context, index) {
         Entry entry = homeProvider.recent.feed!.entry![index];
+        Uri uri = Uri.parse(entry.id!.t as String);
+        // String id = uri.fragment[1];
         return Row(
           children: [
             BookCard(
               imageUrl: entry.link![1].href as String,
+              // id: id,
             ),
             const SizedBox(width: 10),
             Flexible(

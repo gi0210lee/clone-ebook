@@ -20,8 +20,11 @@ class FeaturedSection extends StatelessWidget {
         itemCount: homeProvider.top.feed!.entry!.length,
         itemBuilder: (context, index) {
           Entry entry = homeProvider.top.feed!.entry![index];
+          final uri = Uri.parse(entry.id!.t as String);
+          final id = uri.pathSegments[1];
           return BookCard(
             imageUrl: entry.link![1].href as String,
+            id: id,
           );
         },
       ),

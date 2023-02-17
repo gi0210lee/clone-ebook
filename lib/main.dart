@@ -4,6 +4,7 @@ import 'package:clone_ebook/provider/app_provider.dart';
 import 'package:clone_ebook/provider/explore_provider.dart';
 import 'package:clone_ebook/provider/home_provider.dart';
 import 'package:clone_ebook/routes.dart';
+import 'package:clone_ebook/widgets/app_view_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -38,8 +39,13 @@ class App extends StatelessWidget {
         scrollBehavior: CustomScrollBehavior(),
         title: 'clone ebook',
         theme: provider.theme,
+        builder: (context, child) {
+          return AppView(child: child!);
+        },
         initialRoute: rootRoute,
-        routes: appRoutes,
+        onGenerateRoute: generateRoute,
+        navigatorKey: navKey,
+        // routes: appRoutes,
       );
     });
   }

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:clone_ebook/screens/settings_screen.dart';
+import 'package:clone_ebook/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -37,8 +37,8 @@ class _SplashScreenState extends State<SplashScreen> {
       context,
       MaterialPageRoute(
         builder: (BuildContext context) {
-          // return const MainScreen();
-          return const SettingsScreen();
+          return const MainScreen();
+          // return const SettingsScreen();
         },
       ),
     );

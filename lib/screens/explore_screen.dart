@@ -80,8 +80,11 @@ class ExploreScreen extends StatelessWidget {
               itemCount: bookModal.feed!.entry!.length,
               itemBuilder: (context, index) {
                 Entry entry = bookModal.feed!.entry![index];
+                Uri uri = Uri.parse(entry.id!.t as String);
+                String id = uri.fragment[1];
                 return BookCard(
                   imageUrl: entry.link![1].href as String,
+                  // id: id,
                 );
               },
             ),
